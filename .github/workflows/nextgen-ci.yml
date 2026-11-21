@@ -1,0 +1,23 @@
+name: Immersive museum validation
+on:
+  push:
+    branches:
+      - feat/immersive-r3f-museum
+  pull_request:
+    paths:
+      - 'src/**'
+      - 'package.json'
+      - 'vite.config.js'
+      - 'index.html'
+jobs:
+  unit-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npm test
+      - run: GITHUB_PAGES=true npm run build
+      - run: test -f dist/index.html && test -d dist/assets
