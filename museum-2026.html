@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#070b13"><meta name="portfolio-edition" content="cabinet-v3-2026-11-21">
+<meta name="theme-color" content="#070b13"><meta name="portfolio-edition" content="atelier-v4-2026-11-21">
 <meta name="description" content="Sandeep Madhavarapu — software engineer building secure fintech systems, AI applications, simulation engines and experimental computing. Selected work and technical case studies.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Sandeep Madhavarapu — The Cabinet of Curiosities">
@@ -98,6 +98,80 @@
 @media(min-width:850px){.cabinet-frame{animation:case-appear 1.2s both cubic-bezier(.2,.8,.2,1)}@keyframes case-appear{from{opacity:.3;transform:translateY(28px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}.artifact{animation:artifact-rise .9s both cubic-bezier(.19,.9,.2,1)}.artifact:nth-child(1){animation-delay:.2s}.artifact:nth-child(2){animation-delay:.35s}.artifact:nth-child(3){animation-delay:.5s}.artifact:nth-child(4){animation-delay:.65s}@keyframes artifact-rise{from{opacity:0;transform:translateY(35px)}to{opacity:1;transform:translateY(0)}}}
 @media(max-width:760px){.cabinet-card{display:none}.cabinet-heading:before,.cabinet-heading:after{display:none}.exhibit-ticket{font-size:8px;letter-spacing:.05em}}
 @media(prefers-reduced-motion:reduce){.cabinet-frame,.artifact,.cabinet-frame .cabinet-beam:before,.cabinet-name .name-period{animation:none!important}}
+
+/* EDITION IV: ATELIER NOCTURNE — immersive instrument gallery */
+:root{--amber:#dcb980;--amber-dim:#8d7051}
+body{background:#070a10}
+.nav{border-bottom-color:rgba(202,165,112,.2)}
+.navbtn{border-color:rgba(223,182,115,.52);color:#e8c69b}.navbtn:hover{background:var(--amber);color:#15110b}
+.cabinet-hero{overflow:hidden;background:radial-gradient(ellipse at 50% 48%,rgba(158,114,49,.18),transparent 48%),linear-gradient(110deg,#080c12,#0d141b 48%,#090b11)}
+.cabinet-hero:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,transparent 47%,rgba(212,184,123,.03) 50%,transparent 53%),repeating-linear-gradient(90deg,transparent 0 118px,rgba(175,207,204,.025) 119px 120px);mask-image:linear-gradient(to bottom,black,transparent)}
+.cabinet-hero .cabinet-layout{max-width:1650px}
+.cabinet-overline{font-size:10px;letter-spacing:.28em}
+.cabinet-intro-line{color:#c8b493}
+.cabinet-heading{padding-top:42px}
+.cabinet-name{line-height:1.015;position:relative;font-size:clamp(54px,7.7vw,124px);font-weight:600}
+.cabinet-name span:not(.name-period){background:linear-gradient(140deg,#e5f3e8,#8ccec2 65%,#d8b889);background-clip:text;-webkit-background-clip:text;color:transparent}
+.cabinet-tagline{font-size:clamp(15px,1.45vw,19px)}
+.cabinet-curtain{position:absolute;z-index:2;inset:0;pointer-events:none;opacity:.16;background:repeating-linear-gradient(90deg,rgba(7,9,14,.3) 0 8%,transparent 8% 16%);mask-image:linear-gradient(to bottom,black,transparent 65%);}
+.cabinet-world{position:relative;max-width:1330px;margin:0 auto;perspective:1600px}
+.gallery-side{position:absolute;top:50%;color:#876f54;font:9px var(--mono);letter-spacing:.24em;writing-mode:vertical-rl;transform:translateY(-50%);z-index:3;pointer-events:none}
+.gallery-side.left{left:-28px;transform:translateY(-50%) rotate(180deg)}.gallery-side.right{right:-28px}
+.cabinet-frame{transition:transform .4s ease-out,box-shadow .4s ease-out;will-change:transform;position:relative;max-width:1210px;background:radial-gradient(ellipse at 50% 0%,rgba(153,111,59,.13),transparent 67%),linear-gradient(180deg,#17242b,#0d171e 64%,#11161b);border:1px solid rgba(231,189,118,.5);box-shadow:inset 0 0 0 5px #080c11,inset 0 0 0 7px rgba(220,173,105,.31),0 15px 3px rgba(0,0,0,.3),0 50px 140px rgba(0,0,0,.7),0 0 130px rgba(175,121,54,.09)}
+.cabinet-frame .cabinet-beam:after{content:"";position:absolute;inset:-50%;background:radial-gradient(circle at var(--sx,50%) var(--sy,36%),rgba(244,214,146,.12),transparent 27%);transition:background .1s}
+.cabinet-topline{border-bottom-color:rgba(233,190,119,.32);color:#d5ba91}
+.cabinet-card{font-size:10px;color:#ead0a0;border-color:rgba(218,177,106,.38)}
+.cabinet-frame .artifact{transition:background .35s,transform .4s,border-color .3s;transform-style:preserve-3d}
+.artifact:after{transition:opacity .3s}
+.artifact-stage{height:clamp(230px,21vw,330px)}
+.artifact-stage svg{max-width:255px;filter:drop-shadow(0 18px 7px rgba(0,0,0,.32)) drop-shadow(0 26px 25px rgba(0,0,0,.48))}
+.artifact:hover .artifact-stage svg,.artifact:focus-visible .artifact-stage svg{filter:drop-shadow(0 23px 8px rgba(0,0,0,.4)) drop-shadow(0 30px 26px rgba(0,0,0,.6)) drop-shadow(0 0 28px rgba(234,187,107,.28))}
+.artifact-caption{border-top:1px solid rgba(193,166,115,.09);background:linear-gradient(180deg,transparent,rgba(12,21,25,.38))}
+.artifact-caption strong{font-size:clamp(18px,2vw,28px)}
+.artifact-number{color:#e5be85}
+.shelf-top{background:linear-gradient(180deg,#edcc90,#95673c 40%,#3d291c 100%);border-top-color:#ffe1a9}
+.shelf-face{background:repeating-linear-gradient(90deg,transparent 0 29px,rgba(24,12,9,.13) 30px 32px),linear-gradient(#8a6035,#382719 73%,#211914);box-shadow:0 21px 18px rgba(0,0,0,.36)}
+.cabinet-bottom{padding:0 15px}
+.cabinet-bottom p{max-width:650px;font-size:16px;color:#c2d0d0}
+.cabinet-bottom-tag{color:#e4bf84}
+.cabinet-bottom .primary{background:#eac38b;border-color:#eac38b;color:#17130e}
+.cabinet-bottom .secondary{border-color:rgba(231,190,133,.33)}
+.museum-controls{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:28px}
+.museum-mode{padding:12px 18px;cursor:pointer;font:10px var(--mono);letter-spacing:.12em;color:#e4c59a;border:1px solid rgba(211,170,111,.35);background:rgba(20,26,29,.72);transition:.2s}
+.museum-mode:hover,.museum-mode[aria-pressed=true]{color:#0b191b;background:#a0f2e1;border-color:#a0f2e1}
+.museum-help{color:#8da6ad;font:10px var(--mono);letter-spacing:.07em}
+.cabinet-hero.is-blueprint .cabinet-frame{background:#071e2b;border-color:#7ceadd;box-shadow:inset 0 0 0 8px #07121b,0 0 100px rgba(85,215,205,.1)}
+.cabinet-hero.is-blueprint .cabinet-frame:before{background-image:linear-gradient(rgba(82,207,218,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(82,207,218,.09) 1px,transparent 1px);background-size:24px 24px}
+.cabinet-hero.is-blueprint .artifact-stage svg{filter:grayscale(1) sepia(.8) hue-rotate(110deg) saturate(3) drop-shadow(0 0 14px rgba(77,227,235,.26))}
+.cabinet-hero.is-blueprint .cabinet-card{color:#82ffe7;border-color:#5cd4c8}
+.cabinet-hero.is-blueprint .shelf-top,.cabinet-hero.is-blueprint .shelf-face{background:linear-gradient(#0d4a59,#0a2736);border-color:#70e8de}
+.cabinet-hero.is-blueprint .artifact-number{color:#78ead8}
+.artifact-teaser{display:block;color:#e8c595;font:9px var(--mono);letter-spacing:.06em;margin-top:5px;opacity:.8}
+.cabinet-hero .scroll-cue{display:flex;align-items:center;gap:12px;margin-top:25px;color:#b39b7a;font:10px var(--mono);letter-spacing:.1em}
+.scroll-cue i{display:block;height:1px;flex:1;max-width:60px;background:#9c7b55}
+.dossier-rail{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;border:1px solid rgba(193,163,111,.25);background:rgba(193,163,111,.17);margin-top:52px}
+.dossier-rail>div{background:#0b1119;padding:23px 27px;display:flex;align-items:center;gap:15px}
+.dossier-rail b{color:#e6b977;font:23px var(--display)}
+.dossier-rail p{font:10px/1.8 var(--mono);letter-spacing:.09em;text-transform:uppercase;color:#b9c7c6;margin:0}
+.theory-section{position:relative;padding:105px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:radial-gradient(ellipse at center,rgba(49,91,93,.13),transparent 60%),#091018}
+.theory-layout{display:grid;grid-template-columns:.7fr 1.3fr;gap:7vw;align-items:center}
+.theory-layout h2{font:500 clamp(41px,5vw,75px)/1.07 var(--display);letter-spacing:-.075em;margin-bottom:20px}
+.theory-layout .theory-copy{color:#acc0c3;font-size:15px;line-height:1.85;max-width:390px}
+.theory-flow{position:relative;border:1px solid rgba(145,231,210,.25);padding:31px 27px 27px;box-shadow:inset 0 0 70px rgba(43,111,123,.09)}
+.theory-flow:before{content:"ARCHITECTURE / SELECTED WORK";position:absolute;top:-9px;left:22px;background:#091018;padding:0 12px;color:#a7f5df;font:10px var(--mono);letter-spacing:.1em}
+.system-line{display:flex;gap:12px;align-items:center;margin:0 0 13px}
+.system-line:last-child{margin:0}
+.system-node{flex:1;display:flex;align-items:center;justify-content:space-between;gap:12px;background:rgba(23,43,52,.77);border:1px solid rgba(105,167,169,.24);color:#d7ede8;padding:16px 15px;min-width:0;text-align:left;cursor:pointer;transition:.2s;font:10px var(--mono);letter-spacing:.04em}
+.system-node:hover,.system-node:focus-visible{background:rgba(57,106,109,.3);border-color:#8debdc;transform:translateX(4px)}
+.system-node .node-id{color:#dbb87b;margin-right:8px}
+.system-node small{color:#8da7a8;font:9px var(--mono);white-space:nowrap}
+.system-line:before{content:"";width:13px;height:13px;border:1px solid #76e5d4;border-radius:50%;background:#122d34;box-shadow:0 0 10px rgba(110,244,215,.2);flex:none}
+.theory-label{color:#99d4c7;font:10px var(--mono);letter-spacing:.1em;margin-bottom:16px}
+@media(min-width:900px){.artifact:not(:hover):not(:focus-visible) .artifact-teaser{opacity:.5}.cabinet-world{transform:translateZ(0)}}
+@media(max-width:1100px){.gallery-side{display:none}.theory-layout{grid-template-columns:1fr;gap:35px}.theory-layout .theory-copy{max-width:640px}.cabinet-frame{will-change:auto}}
+@media(max-width:740px){.cabinet-heading{padding-top:20px}.cabinet-name{font-size:clamp(48px,10vw,77px)}.artifact-stage{height:190px}.artifact-teaser{font-size:8px}.museum-controls{margin-top:20px}.dossier-rail{grid-template-columns:1fr;margin-top:33px}.dossier-rail>div{padding:14px 20px}.theory-section{padding:70px 0}.system-node{padding:15px 10px;gap:5px}.system-node small{display:none}.cabinet-bottom{padding:0}}
+@media(max-width:420px){.artifact-stage{height:150px}.cabinet-name{font-size:45px}.cabinet-tagline{font-size:14px}.artifact-caption{min-height:100px}.artifact-teaser{letter-spacing:0}}
+@media(prefers-reduced-motion:reduce){.cabinet-frame,.artifact-stage svg,.artifact{transform:none!important;animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
@@ -105,7 +179,7 @@
 <div class="topline" id="progress" aria-hidden="true"></div>
 <header class="nav"><nav class="navin" aria-label="Main navigation"><a href="#home" class="logo" aria-label="Sandeep Madhavarapu home">SANDEEP<span> /</span></a><div class="navlinks"><a href="#work">Work</a><a href="#approach">Approach</a><a href="#about">About</a><a href="#contact">Contact</a></div><div class="navright"><span class="availability"><i class="pulse" aria-hidden="true"></i> OPEN TO OPPORTUNITIES</span><a class="navbtn" href="mailto:madhavarapusandeep@gmail.com">LET'S CONNECT ↗</a></div></nav></header>
 <main>
-<section class="hero cabinet-hero" id="home"><canvas id="universe" aria-hidden="true"></canvas>
+<section class="hero cabinet-hero" id="home"><canvas id="universe" aria-hidden="true"></canvas><div class="cabinet-curtain" aria-hidden="true"></div>
 <div class="shell cabinet-layout">
 <div class="cabinet-heading">
 <div class="cabinet-overline mono"><span class="cabinet-star">✦</span> A PERSONAL ARCHIVE OF IMPOSSIBLE IDEAS <span class="cabinet-star">✦</span></div>
@@ -113,7 +187,7 @@
 <h1 class="cabinet-name">Sandeep <span>Madhavarapu</span><span class="name-period">.</span></h1>
 <p class="cabinet-tagline">Part engineer. Part curious inventor. <em>Entirely obsessed with building.</em></p><div class="intro-divider" aria-hidden="true"></div><div class="exhibit-ticket"><span class="live-dot" aria-hidden="true"></span><b>THE INVENTOR'S ARCHIVE</b><span>FOUR OBJECTS. FOUR WORLDS.</span></div>
 </div>
-<div class="cabinet-frame" id="cabinet" aria-label="Interactive cabinet with four engineering projects">
+<div class="cabinet-world"><div class="gallery-side left">INVENTIONS / THE HUMAN IMPULSE TO CREATE</div><div class="gallery-side right">THE WORKSHOP OF SANDEEP MADHAVARAPU / 2026</div><div class="cabinet-frame" id="cabinet" aria-label="Interactive cabinet with four engineering projects">
 <div class="cabinet-beam" aria-hidden="true"></div><div class="cabinet-card mono" aria-hidden="true">✦ &nbsp; OPEN THE CABINET &nbsp; ✦</div><div class="cabinet-corners" aria-hidden="true"><span>✦</span><span>✦</span></div>
 <div class="cabinet-topline"><span class="mono">EST. 2026 <span class="topline-star">✧</span> COLLECTION NO. 001</span><span class="mono">SELECT AN ARTIFACT TO INVESTIGATE ↘</span></div>
 <div class="cabinet-objects">
@@ -122,31 +196,32 @@
 <svg viewBox="0 0 220 230" role="img" aria-label="Antique safe with a glowing mechanical ledger dial">
 <defs><linearGradient id="safe" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#657a86"/><stop offset=".24" stop-color="#2d424e"/><stop offset=".72" stop-color="#17252d"/><stop offset="1" stop-color="#687786"/></linearGradient><radialGradient id="dial"><stop stop-color="#103e41"/><stop offset=".6" stop-color="#0a2228"/><stop offset="1" stop-color="#091217"/></radialGradient></defs>
 <ellipse cx="111" cy="209" rx="84" ry="9" fill="#000" opacity=".24"/><path d="M31 43 65 25h121l-27 18z" fill="#566b73"/><rect x="31" y="43" width="128" height="157" rx="7" fill="url(#safe)" stroke="#beab85" stroke-width="2"/><path d="M159 43 186 25v160l-27 15z" fill="#192a32" stroke="#a08c68" stroke-width="1.5"/><rect x="42" y="54" width="106" height="135" rx="3" stroke="#c3ab7d" stroke-width="1.5"/><rect x="49" y="61" width="92" height="120" rx="3" fill="#111e28" stroke="#647d82"/><circle cx="96" cy="118" r="43" fill="url(#dial)" stroke="#d2b77a" stroke-width="6"/><circle cx="96" cy="118" r="34" stroke="#719ca5" stroke-width="1" stroke-dasharray="2 6"/><circle cx="96" cy="118" r="11" fill="#a6ecdc" stroke="#e5e2bc" stroke-width="3"/><g stroke="#ccdec7" stroke-width="3.5" stroke-linecap="round"><path d="M96 87v20M96 129v20M65 118h20M107 118h20"/></g><circle cx="96" cy="118" r="5" fill="#e8ca88"/><rect x="68" y="165" width="55" height="7" rx="2" fill="#baaa83"/><g stroke="#e0bc70" stroke-width="2"><path d="M45 49h12M134 49h12M45 194h12M134 194h12"/></g>
-</svg></span><span class="artifact-caption"><span class="artifact-number mono">ARTIFACT 01</span><strong>The Ledger</strong><span class="artifact-sub">FINTECH / SECURITY</span></span></button>
+</svg></span><span class="artifact-caption"><span class="artifact-number mono">ARTIFACT 01</span><strong>The Ledger</strong><span class="artifact-sub">FINTECH / SECURITY</span><span class="artifact-teaser">17 EDGE FUNCTIONS</span></span></button>
 <button class="artifact artifact-wave" data-open="aac" aria-label="Explore GPU-AAC Lab audio computing case study">
 <span class="artifact-stage">
 <svg viewBox="0 0 220 230" role="img" aria-label="Victorian scientific oscillator with illuminated waveform">
 <defs><linearGradient id="brass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f2d9a1"/><stop offset=".35" stop-color="#9d713f"/><stop offset=".65" stop-color="#483822"/><stop offset="1" stop-color="#cfad6e"/></linearGradient><radialGradient id="glass"><stop stop-color="#18454d"/><stop offset=".7" stop-color="#102b34"/><stop offset="1" stop-color="#0a1921"/></radialGradient></defs>
 <ellipse cx="110" cy="205" rx="78" ry="9" fill="#000" opacity=".25"/><path d="M47 194h127l11 13H36z" fill="#8d6c46" stroke="#d1ac75"/><rect x="48" y="49" width="125" height="147" rx="12" fill="url(#brass)" stroke="#f0d69e" stroke-width="2"/><rect x="56" y="57" width="109" height="131" rx="7" fill="#172831" stroke="#8bbaae"/><circle cx="110" cy="117" r="51" fill="url(#glass)" stroke="#d6bd8b" stroke-width="6"/><g stroke="#4a7980" stroke-opacity=".5"><path d="M62 117h96M110 69v96M76 83l68 68M144 83l-68 68"/></g><path d="M70 118 C79 118 80 95 89 96 S99 141 110 117 S122 79 130 107 S145 144 153 118" stroke="#8ffff1" stroke-width="3.5" fill="none" stroke-linecap="round"/><path d="M70 118 C79 118 80 95 89 96 S99 141 110 117 S122 79 130 107 S145 144 153 118" stroke="#78ffdf" opacity=".2" stroke-width="12" fill="none"/><rect x="90" y="171" width="40" height="8" rx="3" fill="#bb945a"/><path d="M73 48V28h74v20" stroke="url(#brass)" stroke-width="7" fill="none"/><circle cx="110" cy="26" r="9" fill="#bd9b69" stroke="#f3d8a8"/>
-</svg></span><span class="artifact-caption"><span class="artifact-number mono">ARTIFACT 02</span><strong>The Oscillator</strong><span class="artifact-sub">PARALLEL COMPUTING</span></span></button>
+</svg></span><span class="artifact-caption"><span class="artifact-number mono">ARTIFACT 02</span><strong>The Oscillator</strong><span class="artifact-sub">PARALLEL COMPUTING</span><span class="artifact-teaser">11 DOCUMENTED TESTS</span></span></button>
 <button class="artifact artifact-globe" data-open="worldcup" aria-label="Explore WorldCup Oracle probability simulation case study">
 <span class="artifact-stage">
 <svg viewBox="0 0 220 230" role="img" aria-label="Antique celestial globe with orbital rings">
 <defs><radialGradient id="planet" cx=".32" cy=".27" r=".85"><stop stop-color="#8de8d7"/><stop offset=".22" stop-color="#387d89"/><stop offset=".68" stop-color="#1d4058"/><stop offset="1" stop-color="#07131d"/></radialGradient><linearGradient id="mount" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f3dba3"/><stop offset=".5" stop-color="#886237"/><stop offset="1" stop-color="#ccac76"/></linearGradient></defs>
 <ellipse cx="111" cy="207" rx="70" ry="8" fill="#000" opacity=".26"/><path d="M110 172v24M82 199h56M69 205h82" stroke="url(#mount)" stroke-width="8" stroke-linecap="round"/><ellipse cx="110" cy="101" rx="73" ry="83" transform="rotate(24 110 101)" stroke="url(#mount)" stroke-width="4" fill="none"/><circle cx="110" cy="103" r="63" fill="url(#planet)" stroke="#c7b183" stroke-width="3"/><g stroke="#addbc8" opacity=".47" fill="none"><ellipse cx="110" cy="103" rx="27" ry="62"/><ellipse cx="110" cy="103" rx="48" ry="62"/><path d="M47 103h126M52 84h116M52 123h116M65 62q45 34 90 0M65 144q45-31 90 0"/></g><path d="M68 80q15-16 34-10l6 21-13 15-24-4-12-12zM111 113l26-8 22 18-11 26-15 13-15-19z" fill="#6dc4b7" opacity=".3"/><ellipse cx="110" cy="103" rx="89" ry="23" transform="rotate(-24 110 103)" stroke="#e0c68f" stroke-width="2" fill="none"/><circle cx="110" cy="38" r="5" fill="#e8c988"/>
-</svg></span><span class="artifact-caption"><span class="artifact-number mono">ARTIFACT 03</span><strong>The Oracle</strong><span class="artifact-sub">PREDICTIVE MODELING</span></span></button>
+</svg></span><span class="artifact-caption"><span class="artifact-number mono">ARTIFACT 03</span><strong>The Oracle</strong><span class="artifact-sub">PREDICTIVE MODELING</span><span class="artifact-teaser">48-TEAM SIMULATION</span></span></button>
 <button class="artifact artifact-compass" data-open="pathwise" aria-label="Explore PathWise explainable rules case study">
 <span class="artifact-stage">
 <svg viewBox="0 0 220 230" role="img" aria-label="Intricate antique brass compass with an illuminated needle">
 <defs><radialGradient id="face"><stop stop-color="#283d41"/><stop offset=".8" stop-color="#12232e"/><stop offset="1" stop-color="#070f16"/></radialGradient><linearGradient id="rim" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f9db92"/><stop offset=".5" stop-color="#72532c"/><stop offset="1" stop-color="#c59c5c"/></linearGradient></defs>
 <ellipse cx="110" cy="205" rx="76" ry="9" fill="#000" opacity=".28"/><path d="M103 20h14v14h-14z" fill="url(#rim)"/><circle cx="110" cy="117" r="85" fill="#1e2c31" stroke="url(#rim)" stroke-width="11"/><circle cx="110" cy="117" r="72" fill="url(#face)" stroke="#c9a979" stroke-width="2"/><circle cx="110" cy="117" r="61" stroke="#789b97" stroke-dasharray="1 8" stroke-width="2" fill="none"/><g stroke="#9aafad" stroke-width="1.4"><path d="M110 48v17M110 169v17M41 117h17M162 117h17M62 69l13 13M145 152l13 13M157 69l-12 13M75 152l-13 13"/></g><path d="m110 62 15 55-15 40-15-40z" fill="#d2b47f" stroke="#f2d8a4" stroke-width="1.5"/><path d="m110 62 15 55-15 40z" fill="#80f2db"/><circle cx="110" cy="117" r="10" fill="#e6d5a3" stroke="#604b34" stroke-width="3"/><g font-family="serif" font-size="14" fill="#d9c79b" text-anchor="middle"><text x="110" y="82">N</text><text x="110" y="164">S</text><text x="68" y="122">W</text><text x="151" y="122">E</text></g>
-</svg></span><span class="artifact-caption"><span class="artifact-number mono">ARTIFACT 04</span><strong>The Compass</strong><span class="artifact-sub">EXPLAINABLE SYSTEMS</span></span></button>
+</svg></span><span class="artifact-caption"><span class="artifact-number mono">ARTIFACT 04</span><strong>The Compass</strong><span class="artifact-sub">EXPLAINABLE SYSTEMS</span><span class="artifact-teaser">TRACEABLE RULES</span></span></button>
 </div>
 <div class="cabinet-shelf" aria-hidden="true"><div class="shelf-top"></div><div class="shelf-face"></div><div class="shelf-bottom"></div></div>
 <div class="cabinet-base mono"><span>THE BEST IDEAS START WITH CURIOSITY.</span><span>↳ OPEN AN OBJECT. EXPLORE THE CODE.</span></div>
 </div>
-<div class="cabinet-bottom"><div><span class="mono cabinet-bottom-tag">THE PERSON BEHIND THE COLLECTION</span><p>I'm a Computer Science student at George Mason University. I build secure financial systems, AI experiments, simulations and products — then document what actually works.</p></div><div class="actions"><a class="primary" href="#work">EXPLORE ALL PROJECTS <span aria-hidden="true">↗</span></a><a class="secondary" href="https://github.com/SandeepMadhavarapu" target="_blank" rel="noopener noreferrer">VIEW GITHUB <span aria-hidden="true">↗</span></a></div></div>
+</div><div class="museum-controls"><button id="blueprintToggle" class="museum-mode" aria-pressed="false">◈ ACTIVATE BLUEPRINT MODE</button><span class="museum-help">HOVER TO INSPECT • CLICK TO EXPLORE • KEYBOARD ACCESSIBLE</span></div><div class="cabinet-bottom"><div><span class="mono cabinet-bottom-tag">THE PERSON BEHIND THE COLLECTION</span><p>I'm a Computer Science student at George Mason University. I build secure financial systems, AI experiments, simulations and products — then document what actually works.</p></div><div class="actions"><a class="primary" href="#work">EXPLORE ALL PROJECTS <span aria-hidden="true">↗</span></a><a class="secondary" href="https://github.com/SandeepMadhavarapu" target="_blank" rel="noopener noreferrer">VIEW GITHUB <span aria-hidden="true">↗</span></a></div></div>
 </div></section>
+<section class="theory-section" aria-labelledby="architecture-title"><div class="shell theory-layout"><div class="reveal"><span class="section-index">INTERACTIVE / THE ENGINEERING INSIDE</span><h2 id="architecture-title">Look under<br>the <span class="accent">surface.</span></h2><p class="theory-copy">The artifacts are the invitation. The systems are the story. Follow a technical thread, explore the tradeoffs, and inspect the source rather than taking my word for it.</p><a class="textlink" href="#work">EXPLORE THE COMPLETE COLLECTION ↗</a></div><div class="theory-flow reveal" aria-label="Interactive selected engineering work"><p class="theory-label">CHOOSE A SYSTEM TO OPEN ITS ENGINEERING DOSSIER</p><div class="system-line"><button class="system-node" data-open="zuri"><span><span class="node-id">01 /</span> AUTHORIZATION → LEDGER → RECONCILIATION</span><small>FINTECH ↗</small></button></div><div class="system-line"><button class="system-node" data-open="aac"><span><span class="node-id">02 /</span> PCM → MDCT → QUANTIZATION → BITSTREAM</span><small>COMPUTE ↗</small></button></div><div class="system-line"><button class="system-node" data-open="worldcup"><span><span class="node-id">03 /</span> DATA → ELO + POISSON → SIMULATION</span><small>MODELING ↗</small></button></div><div class="system-line"><button class="system-node" data-open="pathwise"><span><span class="node-id">04 /</span> EVIDENCE → RULES → EXPLAINED DECISION</span><small>POLICY ↗</small></button></div></div></div></section>
 <div class="marquee" aria-label="Engineering interests"><div class="marquee-in"><span><b>✳</b> SECURE SYSTEMS</span><span><b>✳</b> APPLIED MACHINE LEARNING</span><span><b>✳</b> FULL-STACK ENGINEERING</span><span><b>✳</b> COMPUTATIONAL MODELING</span><span><b>✳</b> DEVELOPER EXPERIENCE</span></div></div>
 <section id="work" class="section shell"><div class="section-head reveal"><div><span class="section-index">01 / SELECTED ENGINEERING</span><h2>Proof, not<br>just pixels<span class="accent">.</span></h2></div><p class="section-intro">A curated look at real code, technical decisions, constraints, and the things I learned while building.</p></div>
 <div class="filterbar" role="group" aria-label="Filter projects"><button class="filter" aria-pressed="true" data-filter="all">ALL PROJECTS</button><button class="filter" aria-pressed="false" data-filter="systems">SYSTEMS</button><button class="filter" aria-pressed="false" data-filter="ai">AI + RESEARCH</button><button class="filter" aria-pressed="false" data-filter="product">PRODUCT</button></div>
@@ -175,6 +250,12 @@ worldcup:{title:"WorldCup Oracle",type:"PROBABILISTIC SOFTWARE / SPORTS",summary
 pathwise:{title:"PathWise",type:"EXPLAINABLE POLICY / FULL STACK",summary:"A policy-guidance experiment built around traceable rules rather than ungrounded conversational certainty.",points:["Deterministic checks against dated and cited rule packs.","Explicit unknown-state handling when evidence is missing or ambiguous.","Full-stack UI and typed rule representations."],status:"Guidance prototype, not an official university system or legal/immigration advice.",url:"https://github.com/SandeepMadhavarapu/PathWise"},
 ihh:{title:"Immigrant Hall of Honor",type:"DIGITAL HUMANITIES / VERIFICATION",summary:"An evidence-conscious museum site that connects public stories to source records and editorial review.",points:["Verification-focused presentation of claims and underlying sources.","A review workflow that distinguishes AI assistance from human sign-off.","Accessibility work, mobile responsiveness and GitHub Pages deployment."],status:"Collaborative museum challenge project. Individual editorial findings require human approval.",url:"https://github.com/SandeepMadhavarapu/ihh-proof-of-arrival"},
 techvideos:{title:"TechVideos Pipeline",type:"AUTOMATION / CREATIVE SYSTEMS",summary:"An experiment in reproducible creative operations, from draft stories through media generation and publication preparation.",points:["Python scripts for story drafting and automated fact-check steps.","Asset, branding and voice workflow organization.","Publishing queues and Instagram tooling."],status:"Experimental pipeline; published output quality and automation reliability must be checked independently.",url:"https://github.com/SandeepMadhavarapu/TechVideos"}};
+
+const toggle=document.getElementById("blueprintToggle");const hero=document.querySelector(".cabinet-hero");
+if(toggle&&hero){toggle.addEventListener("click",()=>{const on=hero.classList.toggle("is-blueprint");toggle.setAttribute("aria-pressed",String(on));toggle.textContent=on?"✦ RETURN TO MUSEUM MODE":"◈ ACTIVATE BLUEPRINT MODE"})}
+const gallery=document.getElementById("cabinet");const canTilt=window.matchMedia("(hover:hover) and (pointer:fine)").matches&&!window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+if(gallery&&canTilt){let raf=0;gallery.addEventListener("pointermove",e=>{const r=gallery.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;if(raf)cancelAnimationFrame(raf);raf=requestAnimationFrame(()=>{gallery.style.transform="rotateY("+(x*3).toFixed(2)+"deg) rotateX("+(-y*2).toFixed(2)+"deg)";gallery.style.setProperty("--sx",((x+.5)*100)+"%");gallery.style.setProperty("--sy",((y+.5)*100)+"%")})},{passive:true});gallery.addEventListener("pointerleave",()=>{if(raf)cancelAnimationFrame(raf);gallery.style.transform="";gallery.style.setProperty("--sx","50%");gallery.style.setProperty("--sy","36%")})}
+
 const dialog=document.getElementById("details");
 let lastTrigger=null;
 document.querySelectorAll("[data-open]").forEach(b=>b.addEventListener("click",()=>{const item=data[b.dataset.open];if(!item)return;lastTrigger=b;document.getElementById("modal-title").textContent=item.title;document.getElementById("modal-type").textContent=item.type;document.getElementById("modal-summary").textContent=item.summary;document.getElementById("modal-status").textContent=item.status;document.getElementById("modal-link").href=item.url;const list=document.getElementById("modal-points");list.replaceChildren(...item.points.map(p=>{const li=document.createElement("li");li.textContent=p;return li}));dialog.showModal()}));
