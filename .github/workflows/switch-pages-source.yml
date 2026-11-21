@@ -1,0 +1,23 @@
+name: Configure Pages workflow source
+on:
+  push:
+    branches: [ops/pages-build-source]
+permissions:
+  pages: write
+  contents: read
+jobs:
+  switch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Read existing Pages build type
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api "repos/$GITHUB_REPOSITORY/pages" --jq '.build_type'
+      - name: Change Pages build type to custom workflow
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api --method PUT "repos/$GITHUB_REPOSITORY/pages" -f build_type=workflow --jq '.build_type'
+      - name: Confirm configuration
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: test "$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq '.build_type')" = workflow
