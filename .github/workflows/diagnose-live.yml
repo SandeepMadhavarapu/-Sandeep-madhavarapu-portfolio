@@ -1,0 +1,22 @@
+name: Diagnose live Pages HTML
+on:
+  push:
+    branches: [ops/live-pages-diagnostics]
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Inspect public response and script tags
+        shell: bash
+        run: |
+          set -euxo pipefail
+          URL="https://sandeepmadhavarapu.github.io/-Sandeep-madhavarapu-portfolio/?diagnostic=$GITHUB_SHA"
+          curl -L -sS --max-time 20 -D /tmp/headers.txt "$URL" -o /tmp/page.html
+          head -n 20 /tmp/headers.txt
+          wc -c /tmp/page.html
+          head -c 1900 /tmp/page.html
+          echo
+          grep -oE 'src="[^"]+"' /tmp/page.html || true
+          grep -oE 'href="[^"]+\.css"' /tmp/page.html || true
+          curl -L -sS --max-time 20 "https://sandeepmadhavarapu.github.io/-Sandeep-madhavarapu-portfolio/assets/" -o /tmp/assets-index.html
+          head -c 100 /tmp/assets-index.html
