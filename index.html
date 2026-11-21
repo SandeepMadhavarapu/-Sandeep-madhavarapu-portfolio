@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#070b13">
+<meta name="theme-color" content="#070b13"><meta name="portfolio-edition" content="cabinet-v3-2026-11-21">
 <meta name="description" content="Sandeep Madhavarapu — software engineer building secure fintech systems, AI applications, simulation engines and experimental computing. Selected work and technical case studies.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Sandeep Madhavarapu — The Cabinet of Curiosities">
@@ -71,6 +71,33 @@
 @media(max-width:420px){.cabinet-overline{font-size:8px;letter-spacing:.12em}.cabinet-name{font-size:45px}.cabinet-intro-line{letter-spacing:.25em}.artifact-stage{height:155px}.artifact-stage svg{width:min(100%,165px)}.artifact-caption strong{font-size:17px}.artifact-number,.artifact-sub{font-size:8px}.cabinet-bottom .actions a{font-size:9px;padding:12px}}
 @media(prefers-reduced-motion:reduce){.artifact-stage svg{transition:none}}
 
+
+/* A cinematic mechanical reveal, without interrupting navigation */
+.cabinet-hero{background:radial-gradient(ellipse at 50% 51%,rgba(115,89,44,.2),transparent 56%),radial-gradient(ellipse at 35% 35%,rgba(70,122,132,.15),transparent 52%),#080b10}
+.cabinet-heading{position:relative}
+.cabinet-heading:before,.cabinet-heading:after{content:"";position:absolute;top:44px;height:1px;width:clamp(30px,12vw,190px);background:linear-gradient(90deg,transparent,#ba915e);opacity:.55}
+.cabinet-heading:before{left:0}.cabinet-heading:after{right:0;transform:scaleX(-1)}
+.cabinet-name{text-shadow:0 9px 80px rgba(101,215,194,.22)}
+.cabinet-frame{transform-style:preserve-3d;box-shadow:inset 0 0 0 8px #090e13,inset 0 0 0 9px rgba(183,142,82,.2),0 40px 110px rgba(0,0,0,.74),0 0 100px rgba(158,117,61,.085)}
+.cabinet-frame:after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse at 14% 20%,rgba(242,202,135,.095),transparent 35%),radial-gradient(ellipse at 84% 28%,rgba(133,241,223,.075),transparent 35%);mix-blend-mode:screen}
+.cabinet-overline{color:#e7c48a}
+.artifact-stage svg{transform-origin:center 88%}
+.artifact:hover .artifact-caption strong{color:#9cffdc}
+.artifact:hover:after{content:"VIEW ENGINEERING DOSSIER ↗";position:absolute;top:10px;left:50%;transform:translateX(-50%);color:#9cf4dd;font:9px var(--mono);letter-spacing:.06em;white-space:nowrap}
+.cabinet-hero .intro-kicker{font-family:var(--mono);font-size:10px;letter-spacing:.28em;color:#d8b885;margin:0 0 10px}
+.cabinet-hero .intro-divider{height:1px;width:min(480px,82vw);margin:26px auto 0;background:linear-gradient(90deg,transparent,#b58c56,transparent)}
+.cabinet-frame .cabinet-beam{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.cabinet-frame .cabinet-beam:before{content:"";position:absolute;left:50%;top:-10%;width:44%;height:107%;background:linear-gradient(to bottom,rgba(244,211,160,.07),transparent 85%);clip-path:polygon(40% 0,60% 0,100% 100%,0 100%);transform:translateX(-50%);animation:beamsway 14s ease-in-out infinite}
+@keyframes beamsway{50%{transform:translateX(-50%) skewX(10deg)}}
+.cabinet-name .name-period{display:inline-block;animation:periodglow 3s ease-in-out infinite}
+@keyframes periodglow{50%{text-shadow:0 0 32px rgba(230,179,101,.9)}}
+.exhibit-ticket{display:inline-flex;gap:12px;align-items:center;color:#d4bc94;font:10px var(--mono);letter-spacing:.12em;border:1px solid rgba(195,154,98,.27);padding:12px 19px;margin-top:29px;background:rgba(22,30,34,.55)}
+.exhibit-ticket b{color:#91efdf;font-weight:400}
+.exhibit-ticket .live-dot{width:6px;height:6px;background:#98f5df;border-radius:50%;box-shadow:0 0 15px #98f5df}
+.cabinet-card{position:absolute;top:65px;left:50%;transform:translateX(-50%);text-align:center;pointer-events:none;z-index:4;border:1px solid rgba(213,171,102,.16);background:rgba(7,12,17,.87);padding:8px 21px;color:#d7bb8c;font-size:9px;letter-spacing:.17em;white-space:nowrap}
+@media(min-width:850px){.cabinet-frame{animation:case-appear 1.2s both cubic-bezier(.2,.8,.2,1)}@keyframes case-appear{from{opacity:.3;transform:translateY(28px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}.artifact{animation:artifact-rise .9s both cubic-bezier(.19,.9,.2,1)}.artifact:nth-child(1){animation-delay:.2s}.artifact:nth-child(2){animation-delay:.35s}.artifact:nth-child(3){animation-delay:.5s}.artifact:nth-child(4){animation-delay:.65s}@keyframes artifact-rise{from{opacity:0;transform:translateY(35px)}to{opacity:1;transform:translateY(0)}}}
+@media(max-width:760px){.cabinet-card{display:none}.cabinet-heading:before,.cabinet-heading:after{display:none}.exhibit-ticket{font-size:8px;letter-spacing:.05em}}
+@media(prefers-reduced-motion:reduce){.cabinet-frame,.artifact,.cabinet-frame .cabinet-beam:before,.cabinet-name .name-period{animation:none!important}}
 </style>
 </head>
 <body>
@@ -82,12 +109,12 @@
 <div class="shell cabinet-layout">
 <div class="cabinet-heading">
 <div class="cabinet-overline mono"><span class="cabinet-star">✦</span> A PERSONAL ARCHIVE OF IMPOSSIBLE IDEAS <span class="cabinet-star">✦</span></div>
-<div class="cabinet-intro-line">THE WORKSHOP OF</div>
+<p class="intro-kicker">WELCOME TO THE CABINET OF CURIOSITIES</p><div class="cabinet-intro-line">THE WORKSHOP OF</div>
 <h1 class="cabinet-name">Sandeep <span>Madhavarapu</span><span class="name-period">.</span></h1>
-<p class="cabinet-tagline">Part engineer. Part curious inventor. <em>Entirely obsessed with building.</em></p>
+<p class="cabinet-tagline">Part engineer. Part curious inventor. <em>Entirely obsessed with building.</em></p><div class="intro-divider" aria-hidden="true"></div><div class="exhibit-ticket"><span class="live-dot" aria-hidden="true"></span><b>THE INVENTOR'S ARCHIVE</b><span>FOUR OBJECTS. FOUR WORLDS.</span></div>
 </div>
 <div class="cabinet-frame" id="cabinet" aria-label="Interactive cabinet with four engineering projects">
-<div class="cabinet-corners" aria-hidden="true"><span>✦</span><span>✦</span></div>
+<div class="cabinet-beam" aria-hidden="true"></div><div class="cabinet-card mono" aria-hidden="true">✦ &nbsp; OPEN THE CABINET &nbsp; ✦</div><div class="cabinet-corners" aria-hidden="true"><span>✦</span><span>✦</span></div>
 <div class="cabinet-topline"><span class="mono">EST. 2026 <span class="topline-star">✧</span> COLLECTION NO. 001</span><span class="mono">SELECT AN ARTIFACT TO INVESTIGATE ↘</span></div>
 <div class="cabinet-objects">
 <button class="artifact artifact-ledger" data-open="zuri" aria-label="Explore Zuri Connect Africa financial systems case study">
