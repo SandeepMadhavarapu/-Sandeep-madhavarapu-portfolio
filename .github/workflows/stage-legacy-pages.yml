@@ -1,0 +1,52 @@
+name: Stage compiled static portfolio for legacy Pages
+on:
+  push:
+    branches: [main]
+permissions:
+  contents: write
+jobs:
+  compile:
+    if: ${{ !contains(github.event.head_commit.message, '[compiled-pages]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+      - name: Unit tests
+        run: npm test
+      - name: Build Pages artifacts
+        env:
+          GITHUB_PAGES: 'true'
+        run: npm run build
+      - name: Verify build budget
+        run: npm run budget
+      - name: Validate browser interactions
+        run: |
+          npx playwright install --with-deps chromium
+          npm run test:e2e
+      - name: Stage compiled entry and assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          short=$(echo "$GITHUB_SHA" | cut -c1-8)
+          git switch -c "publish/compiled-$short"
+          test -f dist/index.html
+          cp dist/index.html index.html
+          rm -rf assets
+          cp -R dist/assets ./assets
+          cp dist/cabinet.html cabinet.html
+          cp dist/museum-2026.html museum-2026.html
+          git add index.html assets cabinet.html museum-2026.html
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "build: [compiled-pages] publish prebuilt Vite website"
+          git push origin "HEAD:refs/heads/publish/compiled-$short"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: static-build-evidence
+          path: |
+            dist/
+            test-results/
+          retention-days: 7
