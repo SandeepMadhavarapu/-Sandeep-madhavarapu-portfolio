@@ -10,6 +10,8 @@ on:
       - 'package.json'
       - 'vite.config.js'
       - 'index.html'
+      - 'public/**'
+      - 'scripts/**'
 jobs:
   unit-build-browser:
     runs-on: ubuntu-latest
@@ -22,6 +24,7 @@ jobs:
       - run: npm test
       - run: GITHUB_PAGES=true npm run build
       - run: test -f dist/index.html && test -d dist/assets
+      - run: npm run budget
       - name: Install browser
         run: npx playwright install --with-deps chromium
       - name: Browser smoke and responsive screenshots

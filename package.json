@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "test": "vitest run",
     "test:e2e": "playwright test",
-    "check": "npm run test && npm run build"
+    "check": "npm run test && npm run build && npm run budget",
+    "budget": "node scripts/check-bundle.mjs"
   },
   "dependencies": {
     "@react-three/drei": "^9.122.0",
