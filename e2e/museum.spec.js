@@ -1,0 +1,28 @@
+import {test,expect} from '@playwright/test'
+import {mkdirSync} from 'node:fs'
+test('recruiter can navigate the gallery, read evidence and contact',async({page},testInfo)=>{
+ await page.goto('/')
+ await expect(page.getByRole('heading',{level:1})).toContainText('Sandeep')
+ await expect(page.locator('.static-art')).toHaveCount(4)
+ await expect(page.getByRole('button',{name:/ACTIVATE X-RAY MODE/})).toBeDisabled()
+ await page.locator('.static-art').first().click()
+ await expect(page.getByRole('heading',{name:'Zuri Connect Africa'}).first()).toBeVisible()
+ await expect(page.getByText('A production-oriented prototype',{exact:false})).toBeVisible()
+ await expect(page.locator('.dossier a[href*="github.com"]')).toHaveCount(1)
+ await page.getByRole('button',{name:'Close dossier'}).click()
+ await expect(page.locator('.dossier')).toHaveCount(0)
+ await page.getByRole('button',{name:'Research',exact:true}).click()
+ await expect(page.locator('.card')).toHaveCount(1)
+ await expect(page.getByRole('heading',{name:'GPU-AAC Lab'})).toBeVisible()
+ await page.getByRole('button',{name:'All',exact:true}).click()
+ await expect(page.locator('.card')).toHaveCount(4)
+ await expect(page.getByRole('link',{name:/LET'S TALK/})).toHaveAttribute('href',/mailto:/)
+ mkdirSync('test-results/screenshots',{recursive:true})
+ await page.screenshot({path:'test-results/screenshots/'+testInfo.project.name+'.png',fullPage:true,animations:'disabled'})
+})
+test('respects reduced-motion rendering path',async({page})=>{
+ await page.emulateMedia({reducedMotion:'reduce'})
+ await page.goto('/')
+ await expect(page.locator('.static-art')).toHaveCount(4)
+ await expect(page.locator('canvas')).toHaveCount(0)
+})
