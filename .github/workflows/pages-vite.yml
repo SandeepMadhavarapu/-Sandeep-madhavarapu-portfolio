@@ -40,3 +40,14 @@ jobs:
       - name: Deploy static site
         id: deployment
         uses: actions/deploy-pages@v5
+      - name: Install Chromium for public-site verification
+        run: npx playwright install --with-deps chromium
+      - name: Verify real GitHub Pages site and take screenshots
+        run: node scripts/verify-live.mjs
+      - name: Keep live-site evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: live-portfolio-screenshots
+          path: live-proof/
+          retention-days: 7
