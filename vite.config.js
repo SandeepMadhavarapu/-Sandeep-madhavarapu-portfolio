@@ -6,5 +6,5 @@ export default defineConfig({
  publicDir:'../public',
  base:process.env.GITHUB_PAGES==='true'?'/-Sandeep-madhavarapu-portfolio/':'/',
  build:{outDir:'../dist',assetsDir:'assets',emptyOutDir:true,sourcemap:false,cssCodeSplit:true},
- test:{environment:'node',include:['app/src/**/*.test.js']}
+ test:{environment:'node',include:['src/**/*.test.js']}
 })
